@@ -1,0 +1,238 @@
+/* nav #nav */
+#nav{
+    height:28px;
+    line-height:28px;
+    padding:31px;
+}
+#nav ul li{
+    float:left;
+}
+#nav ul li a{
+    text-align:center;
+    font-size:14px;
+    color:#666;
+    padding:0 20px;
+    display:block;
+    transition:color .5s;
+}
+#nav ul li a:hover{
+    color:#5079d9;
+}
+#nav ul li.active a{
+    font-weight:bold;
+}
+/* 固定导航 #fix-nav */
+#fix-nav{
+    width:100%;
+    position:fixed;
+    top:0;
+    left:0;
+    background-color:#e7e7e7;
+    border-bottom: 1px solid #dadada;
+    box-shadow: 0 2px 4px rgba(0,0,0,.04);
+    background-image: linear-gradient(#fff,#f1f1f1);
+}
+.fix-nav-show{
+    z-index:1000;
+    opacity:1;
+    height:60px;
+    transition:all .5s;
+}
+.fix-nav-hidden{
+    z-index:-1000;
+    height:40px;
+    opacity:0;
+    transition:all .5s;
+}
+#fix-nav div{
+    width:1220px;
+    height:28px;
+    line-height:28px;
+    padding:16px 0;
+    margin:0 auto;
+}
+#fix-nav ul{
+    float:left;
+}
+#fix-nav ul li{
+    float:left;
+}
+#fix-nav ul li a{
+    text-align:center;
+    font-size:14px;
+    color:#666;
+    padding:0 20px;
+    display:block;
+    transition:color .5s;
+}
+#fix-nav ul li a:hover{
+    color:#5079d9;
+}
+#fix-nav ul li.active a{
+    font-weight:bold;
+}
+#fix-nav .fix-right{
+    float:right;
+    margin:0 0 0 16px;
+}
+#fix-nav .fix-right span{
+   border-left:1px;
+   color:#333;
+}
+#fix-nav .fix-right li{
+    height:28px;
+    line-height:28px;
+    float:left;
+    width:60px;
+}
+#fix-nav .fix-right li a{
+    display:block;
+    width:22px;
+    height:20px;
+    line-height:28px;
+    background:#fff;
+    margin:5px auto;
+    padding:0;
+}
+#fix-nav .fix-right li a.user-info-btn{
+	background:url(../images/01-index/1_base/xiaotubiao.png) no-repeat -65px -2px;
+}
+#fix-nav .fix-right li a.shopping-btn{
+	position:relative;
+	background:url(../images/01-index/1_base/xiaotubiao.png) no-repeat -65px -23px;
+}
+#fix-nav .fix-right li a.shopping-btn span{
+	position:absolute;
+	left:25px;
+	top:-2px;
+	width:20px;
+	height:20px;
+	line-height:20px;
+	background:#aaa;
+	border-radius:50%;
+	text-align:center;
+	color:#fff;
+	font-size:0.8em;
+}
+/* banner：广告轮播方法1 
+#banner{
+    overflow:hidden;
+}
+#banner ul{
+    width:4880px;
+    position:relative;
+    top:0;
+    left:0;
+}
+#banner ul li{
+    float:left;
+}
+#banner img{
+    width:1220px;
+}*/
+/* banner：#banner 广告轮播方法2 */
+#banner ul{
+    position:relative;
+    height:450px;
+}
+#banner img{
+    width:550px;
+}
+#banner ul li{
+    position:absolute;
+    transition:all 1s;
+}
+#banner ul li a{
+    position:absolute;
+    top:0;
+    bottom:0;
+    right:0;
+    left:0;
+    z-index:1;
+}
+#banner ul li.second_left img,#banner ul li.second_right img{
+    width:450px;
+    transition:all 1s;
+    opacity:.7;
+}
+#banner ul li.third_left img,#banner ul li.third_right img{
+    width:350px;
+    transition:all 1s;
+    opacity:.3;
+}
+#banner ul li.first{
+    left:335px;
+    top:150px;
+    z-index:100;
+}
+#banner ul li.second_left{
+    left:100px;
+    top:100px;
+    z-index:50;
+}
+#banner ul li.second_right{
+    left:665px;
+    top:100px;
+    z-index:50;
+}
+#banner ul li.third_left{
+    left:250px;
+    top:50px;
+    z-index:10;
+}
+#banner ul li.third_right{
+    left:620px;
+    top:50px;
+    z-index:10;
+}
+/* 图片导航 #imgNav */
+#imgNav{
+    margin-bottom:25px;
+}
+#imgNav ul{
+    border:1px solid rgba(0,0,0,.14);
+    border-right:0;
+    border-radius:8px;
+    overflow:hidden;
+    box-shadow:0 3px 8px -6px rgba(0,0,0,.1);
+}
+#imgNav ul li{
+    position:relative;
+    box-sizing:border-box;
+    float:left;
+    width:25%;
+    height:200px;
+    border-right:1px solid rgba(0,0,0,.14);
+    overflow:hidden;
+}
+#imgNav ul li a{
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    z-index:1;
+    transition:all .5s;
+}
+#imgNav ul li a:hover{
+    box-shadow:0 0 38px rgba(0,0,0,.08) inset;
+}
+#imgNav ul li img{
+    width:305px;
+    height:200px;
+}
+/* 热门商品 */
+#hot-product{
+    border:1px solid rgba(0,0,0,.14);
+    border-radius:8px;
+    margin-bottom:25px;
+    overflow:hidden;
+}
+#hot-product .hot-header{
+    background:#fafafa;
+    height:60px;
+    line-height:60px;
+    font-size:14px;
+    color:#666;
+    border-bottom:1px solid rgba(0,0,0,.14);
+}
