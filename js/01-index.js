@@ -113,9 +113,38 @@ $(()=>{
         }
     }
 
-    
+    /* 4、热门商品 */
+    let hot_product={
+        hot_btn:$("#hot-product .hot-btn"),
+        hot_lis:$("#hot-product>ul.hot-product-list"),
+        init(){
+            //按钮功能
+            this.hot_btn.on("click","a",function(){
+                console.log("保留功能");
+            })
+            //鼠标移入li
+            this.hot_lis.on("mouseenter","li",function(){
+                $(this)
+                    .find("span.price")
+                    .css("display","none")
+                    .next("a.price-hover")
+                    .css("display","block")
+            }).on("mouseleave","li",function(){
+                $(this)
+                    .find("span.price")
+                    .css("display","block")
+                    .next("a.price-hover")
+                    .css("display","none")
+            })
+        }
+    }
+
+
+
+
     //执行所有动画
     lunbo.init();
     fix_nav.init();
     user_info.init();
+    hot_product.init();
 })

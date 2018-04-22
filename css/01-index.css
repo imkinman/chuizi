@@ -256,16 +256,16 @@
     margin-left:17px;
     background:url(../images/01-index/1_base/lr-btn.png) no-repeat;
 }
-#hot-product>div.hot-header>p.hot-btn>a:first-child{
+#hot-product>div.hot-header>p.hot-btn>a.last-btn{
     background-position:0px 0px;
 }
-#hot-product>div.hot-header>p.hot-btn>a:last-child{
+#hot-product>div.hot-header>p.hot-btn>a.next-btn{
     background-position:-138px 0px;
 }
-#hot-product>div.hot-header>p.hot-btn>a.disabled-lf{
+#hot-product>div.hot-header>p.hot-btn>a.last-btn.disabled{
     background-position:-46px -1px;
 }
-#hot-product>div.hot-header>p.hot-btn>a.disabled-rt{
+#hot-product>div.hot-header>p.hot-btn>a.next-btn.disabled{
     background-position:-92px -1px;
 }
 /* 热门商品list */
@@ -276,7 +276,7 @@
     position:relative;
     text-align:center;
     background:#fff;
-    padding:45px 0 20px;
+    padding:45px 0 30px;
     float:left;
 }
 #hot-product>ul.hot-product-list>li.hot-show>a:not(.price-hover){
@@ -287,8 +287,22 @@
     bottom:0;
     transition:all .5s;
 }
-#hot-product>ul.hot-product-list>li.hot-show>a:not(.price-hover):hover{
+#hot-product>ul.hot-product-list>li.hot-show:hover>a:not(.price-hover){
     box-shadow:0 0 38px rgba(0,0,0,.08) inset;
+}
+#hot-product>ul.hot-product-list>li.hot-show>span.hot-sale{
+    position:absolute;
+    top:20px;
+    right:20px;
+    border-radius:13px;
+    font-size:12px;
+    color: #a06e37;
+    background: #fffbdf;
+    border: 1px solid #d5b480;
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,.05);
+    padding:0 10px;
+    height:18px;
+    line-height:18px;
 }
 #hot-product>ul.hot-product-list>li.hot-show>img{
     margin:0 auto 20px;
@@ -308,15 +322,20 @@
 }
 #hot-product>ul.hot-product-list>li.hot-show>p.product-style-btn{
     margin-bottom:20px;
+    height:20px;
 }
 #hot-product>ul.hot-product-list>li.hot-show>p.product-style-btn>a{
     display:inline-block;
+    vertical-align:middle;
     position:relative;
     width:14px;
     height:14px;
     border-radius:50%;
     border:1px solid #e5e5e5;
     margin:0 6px;
+}
+#hot-product>ul.hot-product-list>li.hot-show>p.product-style-btn>a.active{
+    border:2px solid #b2b2b2;
 }
 #hot-product>ul.hot-product-list>li.hot-show>p.product-style-btn>a>span{
     position:absolute;
@@ -332,11 +351,21 @@
 #hot-product>ul.hot-product-list>li.hot-show>span.price{
     display:block;
     color:#e4393c;
+    height:30px;
+    line-height:30px;
+    box-sizing:border-box;
 }
 #hot-product>ul.hot-product-list>li.hot-show>span.price>b{
     font-size:18px;
 }
+#hot-product>ul.hot-product-list>li.hot-show>span.price>s{
+    color:#d2d2d2;
+    font-size:13px;
+    display:inline-block;
+    margin-left:3px;
+}
 #hot-product>ul.hot-product-list>li.hot-show>a.price-hover{
+    box-sizing:border-box;
     display:none;
     width:100px;
     height:30px;
