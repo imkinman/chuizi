@@ -453,6 +453,7 @@ body{
 #nav,#banner,#imgNav,#hot-product{
   width:1220px;
   margin:0 auto;
+  box-sizing:border-box;
 }
 
 a{
