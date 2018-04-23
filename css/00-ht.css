@@ -182,10 +182,11 @@
 /* 2、Footer */
 #footer{
     min-width:1220px;
-    border-top:1px solid #666;
+    border-top:1px solid #e6e6e6;
     background:#fafafa;
     color:#666;
     font-size:14px;
+    margin-top:60px;
 }
 #footer>div{
     width:1200px;

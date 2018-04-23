@@ -449,13 +449,6 @@ template {
 body{
   background:#ededed;
 }
-
-#nav,#banner,#imgNav,#hot-product{
-  width:1220px;
-  margin:0 auto;
-  box-sizing:border-box;
-}
-
 a{
   text-decoration:none;
 }
@@ -469,4 +462,33 @@ ul,li,h1,h2,h3,h4,h5,h6,p{
   content:"";
   display:block;
   clear:both;
+}
+#nav,#banner,#imgNav,#hot-product,.product-floor{
+  width:1220px;
+  margin:0 auto;
+  box-sizing:border-box;
+}
+/* 组件1：鼠标移入商品中，显示内阴影 */
+a.product-hover{
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    transition:all .5s;
+}
+a.product-hover:hover{
+  box-shadow:0 0 38px rgba(0,0,0,.08) inset;
+}
+.unleft-border{
+  border-left:0 !important;
+}
+.unright-border{
+  border-right:0 !important;
+}
+.untop-border{
+  border-top:0 !important;
+}
+.unbottom-border{
+  border-bottom:0 !important;
 }
