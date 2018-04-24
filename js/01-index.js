@@ -33,6 +33,9 @@ $(()=>{
         state:1,
         className:["first","second_left","third_left","third_right","second_right","first"],  
         init(){
+            this.move();
+        },
+        move(){
             let me=this;
             this.timer1=setInterval(this.leftOnce.bind(this),this.TRANS);
             this.$imgs.on("click","li",function(){
@@ -89,7 +92,7 @@ $(()=>{
         init(){
             let me=this;
             $(document).scroll(function(e){
-                if($(this).scrollTop()<200){
+                if($(this).scrollTop()<150){
                     me.$fix_nav.removeClass("fix-nav-show").addClass("fix-nav-hidden");
                 }else{
                     me.$fix_nav.removeClass("fix-nav-hidden").addClass("fix-nav-show");
