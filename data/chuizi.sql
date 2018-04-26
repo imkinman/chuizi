@@ -28,8 +28,7 @@ CREATE TABLE product(
     total_count INT,            #剩余数量
     favourable VARCHAR(16),     #优惠
     f_description VARCHAR(512), #优惠信息
-    p_style VARCHAR(1024),      #商品颜色
-    size VARCHAR(512),          #尺码/版本
+    spec    VARCHAR(2048),      #所有规格 规格名:[,,,];
     service_note VARCHAR(512),  #服务说明
     href VARCHAR(512),          #链接地址
 
@@ -59,7 +58,7 @@ CREATE TABLE product_pic(
     img_info10 VARCHAR(1024),
 
     FOREIGN KEY(product_pid) REFERENCES product(pid)
-)
+);
 
 #轮播图
 CREATE TABLE carrousel(
