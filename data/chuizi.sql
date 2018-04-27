@@ -87,3 +87,9 @@ INSERT INTO imgNav VALUES
 (null,"秋款卫衣","./images/01-index/3_imgNav/3.png","./page/jianguo-accessories.html"),
 (null,"防霾口罩","./images/01-index/3_imgNav/4.png","./page/02-product-details.html");
 
+#用户表
+CREATE TABLE user_info(
+    uid INT PRIMARY KEY AUTO_INCREMENT,
+    uname VARCHAR(32),
+    upwd VARCHAR(16)
+)

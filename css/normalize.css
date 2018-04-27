@@ -492,3 +492,11 @@ a.product-hover:hover{
 .unbottom-border{
   border-bottom:0 !important;
 }
+.hidden{
+  opacity:0 !important;
+  z-index:-1 !important;
+}
+.show{
+  opacity:1 !important;
+  z-index:10 !important;
+}
