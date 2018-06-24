@@ -500,3 +500,9 @@ a.product-hover:hover{
   opacity:1 !important;
   z-index:10 !important;
 }
+.lf{
+  float:left;
+}
+.rt{
+  float:right;
+}

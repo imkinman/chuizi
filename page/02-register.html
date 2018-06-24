@@ -5,6 +5,7 @@
     <title>用户注册</title>
     <link rel="icon" href="../images/00-icon/favicon.ico">
     <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/animate.css">
     <link rel="stylesheet" href="../css/02-register.css">
 </head>
 <body>
@@ -46,7 +47,7 @@
                     <button class="submit" type="button">注册</button>
                 </form>
                 <div class="tologin">
-                    如果您已拥有 Smartisan ID，则可在此 <a href="#">登录</a>
+                    如果您已拥有 Smartisan ID，则可在此 <a href="./02-login.html">登录</a>
                 </div>
             </div>
         </div>
@@ -72,8 +73,15 @@
                 </p>
             </div>
         </footer>
+        
+        <div id="wait" class="hidden">
+            <div class="tip-box">
+                <span class="tip">注册成功，正在为您跳转到登录页面，请稍后...</span>
+                <img src="../images/02-login/wait.gif">
+            </div>
+        </div>
     </div>
-    
+
     <script src="../js/jquery-3.2.1.js"></script>
     <script src="../js/02-register.js"></script>
 </body>

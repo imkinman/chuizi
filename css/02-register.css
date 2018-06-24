@@ -7,14 +7,16 @@ body{
     height:100%;
     min-width:1220px;
     min-height:700px;
+    position:relative;
+    padding:100px 0;
 }
 #container{
     width: 450px;
     min-height:450px;
     border: 1px solid #dadada;
     border-radius: 13px;
-    margin: 100px auto;
-    box-shadow: 0 1px 4px rgba(0,0,0,.08);
+    margin: 0 auto;
+    box-shadow: 0 9px 30px -6px rgba(0,0,0,.2), 0 18px 20px -10px rgba(0,0,0,.04);
     overflow:hidden;
 }
 /* 标题样式 */
@@ -143,6 +145,7 @@ body{
     border:1px solid #5079d9;
 }
 #container>div.user-box li.err{
+    animation-duration:1s;
     border:1px solid #d16d62 !important;
 }
 /* 登录页面 */
@@ -191,4 +194,31 @@ body{
 }
 #footer>div li a{
     color:#5079d9;
+}
+/* 等待图标 */
+#wait{
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background:rgba(10,10,10,.2);
+    padding:300px 0;
+    transition:all .5s;
+}
+#wait>.tip-box{
+    margin:0 auto;
+    padding:0 10px;
+    width:400px;
+    height:50px;
+    line-height:50px;
+    background:#fff;
+    border-radius:8px;
+    color:#3d5;
+    font-weight:bold;
+    text-align:center;
+}
+#wait>.tip-box>img{
+    width:20px;
+    vertical-align:center;
 }

@@ -91,5 +91,6 @@ INSERT INTO imgNav VALUES
 CREATE TABLE user_info(
     uid INT PRIMARY KEY AUTO_INCREMENT,
     uname VARCHAR(32),
-    upwd VARCHAR(16)
+    upwd VARCHAR(16),
+    avatar VARCHAR(1024) DEFAULT "./images/03-avatar/default-user-avatar.png"
 )

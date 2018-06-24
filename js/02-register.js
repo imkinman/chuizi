@@ -8,6 +8,7 @@ $(()=>{
         $isOk:$("#container>.user-box div.is-ok"),
         $submit:$("#container>.user-box button.submit"),
         $form:$("#container>.user-box>form"),
+        $wait:$("#wait"),
         regUname:/^(\w+@[0-9a-zA-Z_]+.[0-9a-zA-Z]+)|((\+86\s+|0086\s+)?1[34578]\d{9})$/,
         regUpwd:/^(?![a-zA-Z]+$)(?![A-Z0-9]+$)[a-zA-Z0-9~!@#$%^&*_]{6,16}$/,
         unameEmpty:"用户名不能为空",
@@ -49,12 +50,13 @@ $(()=>{
                 let value=$(this).val();
                 if((!value)||value!==me.upwd){
                     $(this).next("span.info").addClass("show")
-                        .parent("li").addClass("err");
+                        .parent("li").addClass("err shake");
+                    setTimeout(()=>{$(this).removeClass("shake")},500)
                     me.reUpwdBtn=false;
                     me.canSubmit();
                 }else{
                     $(this).next("span.info").removeClass("show")
-                        .parent("li").removeClass("err hover");
+                        .parent("li").removeClass("err hover shake");
                     me.reUpwdBtn=true;
                     me.canSubmit();
                 }
@@ -95,9 +97,12 @@ $(()=>{
                             this.unameBtn=this.err($ipt ,data.msg);
                             this.canSubmit();
                         }else{
+                            console.log(1)
                             this.unameBtn=this.succ($ipt);
                             this.canSubmit();
                         }
+                    }).catch(err=>{
+                        alert("谢谢您发现了我网页里一个bug，请联系我，我会及时修改");
                     })
                 }
                 if($ipt.attr("data-pwd")==="upwd"){
@@ -110,7 +115,8 @@ $(()=>{
         },
         err($ipt, text){
             $ipt.next("span.info").addClass("show").html(text)
-                .parent("li").addClass("err hover");
+                .parent("li").addClass("err hover shake");
+            setTimeout(()=>{$ipt.parent("li").removeClass("shake")},500)
             return false;
         },
         succ($ipt){
@@ -119,7 +125,6 @@ $(()=>{
             return true;
         },
         canSubmit(){
-            console.log(this.unameBtn,this.upwdBtn,this.reUpwdBtn,this.isOkBtn)
             if(this.unameBtn&&this.upwdBtn&&this.reUpwdBtn&&this.isOkBtn){
                 this.$submit.addClass("ok");
                 return true;
@@ -138,13 +143,23 @@ $(()=>{
                     data:this.$form.serialize(),
                     dataType:"json"
                 }).then(data=>{
-                    console.log(data)
+                    if(data.ok === 0){
+                        sessionStorage.setItem("uname",this.$uname.val());
+                        sessionStorage.setItem("upwd",this.$upwd.val());
+                        this.$wait.removeClass("hidden").addClass("show");
+                        setTimeout(()=>{
+                            location.href="../page/02-login.html";
+                        },1000);
+                    }else{
+                        this.err(eval(data.ipt), data.msg);
+                    }
+                }).catch(err=>{
+                    alert("谢谢您发现了我网页里一个bug，请联系我，我会及时修改");
                 })
-            }else{
-                return;
             }
         }
     }
 
+    //启动功能
     validate.init()
 })

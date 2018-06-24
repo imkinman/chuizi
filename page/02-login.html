@@ -2,25 +2,51 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>用户注册</title>
+    <title>用户登录</title>
     <link rel="icon" href="../images/00-icon/favicon.ico">
     <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/02-register.css">
+    <link rel="stylesheet" href="../css/animate.css">
+    <link rel="stylesheet" href="../css/02-login.css">
 </head>
 <body>
     <div id="background">
         <div id="container">
+            <img id="logo" src="../images/02-login/logo.png" alt="">
             <h1 class="title">使用 Smartisan ID登录官网</h1>
             <div class="user-box">
                 <form>
-                    
-                    <button class="submit" type="button">登录</button>
+                    <ul class="user-info">
+                        <li class="user-name">
+                            <span class="icon">
+                                <i></i>
+                            </span>
+                            <input type="text" name="uname" placeholder="手机号/邮箱">
+                            <span class="info"></span>
+                        </li>
+                        <li class="password">
+                            <span class="icon">
+                                <i></i>
+                            </span>
+                            <input type="password" name="upwd" data-pwd="upwd" placeholder="密码">
+                            <span class="info"></span>
+                        </li>
+                    </ul>
+                    <div class="is-auto">
+                        <a href="javascript:;" class="auto-login"></a>
+                        自动登录
+                        <div class="rt">
+                            <a href="./02-register.html">注册Smartisan ID</a>
+                            <span> | </span>
+                            <a href="#">忘记密码?</a>
+                        </div>
+                    </div>
+                    <button class="login" type="button">登录</button>
                 </form>
-                <div class="otherLogin">
-                    其他账号登录：
-                    <a class="wxLogin" href="#"></a>
-                    <a class="weiboLogin" href="#"></a>
-                    <a class="qqLogin" href="#"></a>
+                <div class="otherLogin clear">
+                    <span class="lf">其他账号登录：</span>
+                    <a class="wxLogin lf" href="javascript:alert('跳转到微信登录 - 测试');"></a>
+                    <a class="weiboLogin lf" href="javascript:alert('跳转到微博登录 - 测试');"></a>
+                    <a class="qqLogin lf" href="javascript:alert('跳转到QQ登录 - 测试');"></a>
                 </div>
             </div>
         </div>
@@ -49,6 +75,6 @@
     </div>
     
     <script src="../js/jquery-3.2.1.js"></script>
-    <script src="../js/02-register.js"></script>
+    <script src="../js/02-login.js"></script>
 </body>
 </html>

@@ -22,6 +22,7 @@ $(()=>{
     })();
 })*/
 $(()=>{
+    
     /* 1、广告轮播 */
     let lunbo={
         $imgs:$("#banner ul"),
@@ -101,22 +102,7 @@ $(()=>{
         }
     }
 
-    /* 3、用户信息list */
-    let user_info={
-        $user_info:$("#user_info"),
-        $user_info_list:$("#user_info_list"),
-        init(){
-            let me=this;
-            this.$user_info.mouseenter(function(){
-                me.$user_info_list.removeClass("user-info-hidden").addClass("user-info-show");
-            })
-            this.$user_info.mouseleave(function(){
-                me.$user_info_list.removeClass("user-info-show").addClass("user-info-hidden");
-            })
-        }
-    }
-
-    /* 4、热门商品 */
+    /* 3、热门商品 */
     let hot_product={
         hot_btn:$("#hot-product .hot-btn"),
         hot_lis:$("#hot-product>ul.hot-product-list"),
@@ -142,12 +128,8 @@ $(()=>{
         }
     }
 
-
-
-
-    //执行所有动画
+    //启动功能
     lunbo.init();
     fix_nav.init();
-    user_info.init();
     hot_product.init();
 })
